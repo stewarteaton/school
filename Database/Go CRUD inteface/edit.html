@@ -1,0 +1,31 @@
+{{ define "edit.html" }}
+  {{ template "header" }}
+	<div class="row">
+	<label for='left-label' class='left inline'>
+	<center>
+		{{ range .}}
+		<h2>Here is {{ .FirstName}} {{ .LastName}}s Information</h2>
+		<form method="POST" action="update">
+			<div class="row">
+					<input type="hidden" name="PersonID" value="{{ .PersonID}}" /> 
+					<p>First Name: <input type="text" name="FirstName" value="{{ .FirstName }}"></p>
+					<p>Last Name: <input type="text" name="LastName" value="{{ .LastName }}"></p>
+					<p>Birthdate (YYYY-MM-DD): <input type="text" name="Birthdate" value="{{ .Birthdate }}"></p>
+					<p>Birthcity: <input type="text" name="BirthCity" value="{{ .BirthCity }}"></p>
+					<p>Birthstate: <input type="text" name="BirthState" value="{{ .BirthState}}"></p>
+					<p>Region: <input type="text" name="Region" value="{{ .Region }}"></p>					
+					
+			{{ end }}
+					<!-- submit button				 -->
+				<input type="submit" name="submit" class="button tiny round" value="Change" />
+			</div>
+		</form>
+
+	
+	
+	
+	</center>
+	</label>
+	</div>
+  {{ template "footer" }}
+{{ end }}

@@ -1,0 +1,29 @@
+{{ define "create.html" }}
+  {{ template "header" }}
+	<div class="row">
+	<label for='left-label' class='left inline'>
+	<center>
+	<h2> Enter Your Person's Information </h2>
+	<form method="POST" action="add">
+		<div class="row">
+				<p>First Name: <input type="text" name="FirstName"></p>
+				<p>Last Name: <input type="text" name="LastName"></p>
+				<p>Birth Date (YYYY-MM-DD): <input type="text" name="Birthdate"></p>
+				<p>Birth City: <input type="text" name="BirthCity"></p>
+				<p>Birth State: <input type="text" name="BirthState"></p>
+				<p>Region: <input type="text" name="Region"></p>
+				
+				<!-- submit button				 -->
+				<input type="submit" name="submit" class="button tiny round" value="Add Person" />
+	
+
+		</div>
+	</form>
+	
+	
+	
+	</center>
+	</label>
+	</div>
+  {{ template "footer" }}
+{{ end }}
